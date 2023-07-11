@@ -1,32 +1,25 @@
 import nltk
+import re
 
 # Download the necessary resources from nltk
-nltk.download('averaged_perceptron_tagger')
-nltk.download('wordnet')
+nltk.download('stopwords')
+nltk.download('brown')
 
-from nltk.corpus import wordnet as wn
+from nltk.corpus import stopwords
+from nltk.corpus import brown
+from collections import Counter
 
-# Get the 5,000 most common English words by frequency
-common_words = wn.words(lang='eng')
+# Get the most common English words from the Brown corpus
+common_words = [word.lower() for word, _ in Counter(brown.words()).most_common()]
 
-# Filter the words to include only nouns, verbs, and adjectives
-filtered_words = []
-for word in common_words:
-    synsets = wn.synsets(word)
-    if any(synset.pos() in ['n', 'v', 'a'] for synset in synsets):
-        filtered_words.append(word)
+# Remove function words using stopwords from nltk
+function_words = set(stopwords.words('english'))
+filtered_words = [word for word in common_words if word not in function_words and re.match('^[a-zA-Z]+$', word) and len(word) > 4]
 
-# Remove capitalized words and words with hyphens
-filtered_words = [word for word in filtered_words if not word.isupper() and '-' not in word]
+# Select the top 5000 most common words
+top_5000_words = filtered_words[:5000]
 
-# Remove difficult-to-guess words
-difficult_words = ['what', 'if', 'and']  # Add more words if needed
-filtered_words = [word for word in filtered_words if word not in difficult_words]
-
-# Select 5,000 random words from the filtered list
-import random
-random_words = random.sample(filtered_words, k=5000)
-
-# Print the selected words
-for word in random_words:
-    print(word)
+# Write the words to a text file
+file_path = '/home/lukeul/top_5000_words.txt'  # Replace with the desired file path
+with open(file_path, 'w') as file:
+    file.write('\n'.join(top_5000_words))
