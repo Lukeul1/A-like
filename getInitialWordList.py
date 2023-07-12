@@ -34,8 +34,11 @@ for word in common_words:
             if len(filtered_words) == 5000:
                 break
 
+# Remove words with fewer than 5 characters
+filtered_words = [word for word in filtered_words if len(word) >= 5]
+
 # Write the words to a text file
-file_path = '/home/lukeul/sam-e/top_5000_words.txt'  # Replace with the desired file path
+file_path = '/home/lukeul/sam-e/common_words.txt'  # Replace with the desired file path
 with open(file_path, 'w') as file:
     file.write('\n'.join(filtered_words))
 
