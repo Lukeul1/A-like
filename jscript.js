@@ -33,7 +33,10 @@ inputFields.forEach((input, index) => {
 // Function to handle the word checking logic
 function checkWord() {
     const userWord = inputFields
-        .map(input => input.value.toLowerCase())
+        .map(input => {
+            input.value = ''; // Clear the input field
+            return input.value.toLowerCase();
+        })
         .join('');
 
     if (userWord === targetWord) {
@@ -44,13 +47,51 @@ function checkWord() {
         resultMessage.textContent = 'Try again!';
         resultMessage.style.color = 'red';
         lives--;
-
+    inputFields[0].focus();
         if (lives <= 0) {
             resultMessage.textContent = `You lost! The word was "${targetWord}".`;
             checkButton.disabled = true;
             remainingLives.textContent = '0';
         } else {
             remainingLives.textContent = lives;
+        }
+    }
+}
+
+// Define the on-screen keyboard keys
+const keyboardKeys = [
+    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+    ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+];
+
+// Create the on-screen keyboard dynamically
+const keyboardContainer = document.getElementById('keyboard-container');
+keyboardKeys.forEach(row => {
+    const keyboardRow = document.createElement('div');
+    keyboardRow.className = 'keyboard-row';
+    row.forEach(key => {
+        const keyButton = document.createElement('button');
+        keyButton.className = 'keyboard-key';
+        keyButton.textContent = key;
+        keyButton.addEventListener('click', () => handleKeyboardInput(key));
+        keyboardRow.appendChild(keyButton);
+    });
+    keyboardContainer.appendChild(keyboardRow);
+});
+
+function handleKeyboardInput(key) {
+    // Find the first empty input field
+    const emptyInput = inputFields.find(input => input.value === '');
+
+    if (emptyInput) {
+        emptyInput.value = key.toLowerCase();
+        emptyInput.focus(); // Set focus on the input field
+
+        // Check if all input fields are filled
+        const allFilled = inputFields.every(input => input.value !== '');
+        if (allFilled) {
+            checkWord(); // Automatically trigger the check
         }
     }
 }

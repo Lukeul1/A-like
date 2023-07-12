@@ -15,9 +15,30 @@
         <button id="check-button">Check</button>
     </div>
 
+    <div id="keyboard-container">
+        <div class="keyboard-row">
+            <button class="keyboard-key" onclick="handleKeyboardInput('q')">Q</button>
+            <button class="keyboard-key" onclick="handleKeyboardInput('w')">W</button>
+            <button class="keyboard-key" onclick="handleKeyboardInput('e')">E</button>
+            <button class="keyboard-key" onclick="handleKeyboardInput('r')">R</button>
+            <button class="keyboard-key" onclick="handleKeyboardInput('t')">T</button>
+            <!-- Add more buttons for the remaining keys -->
+        </div>
+        <!-- Add more rows for the remaining keys -->
+    </div>
+
     <div id="result-container">
         <h2 id="result-message"></h2>
         <p id="lives">Lives: <span id="remaining-lives">3</span></p>
+        <div id="how-to-play">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Guess the word by entering one letter at a time in the input fields or using the on-screen keyboard.</li>
+                <li>Click the "Check" button to check if your guess is correct.</li>
+                <li>You have 3 lives. Each incorrect guess will deduct 1 life.</li>
+                <li>If you run out of lives, the game is over.</li>
+            </ul>
+        </div>
     </div>
 
     <script src="jscript.js"></script>
