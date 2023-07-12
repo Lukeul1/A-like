@@ -80,18 +80,22 @@ keyboardKeys.forEach(row => {
     keyboardContainer.appendChild(keyboardRow);
 });
 
+// Function to handle on-screen keyboard input
 function handleKeyboardInput(key) {
     // Find the first empty input field
     const emptyInput = inputFields.find(input => input.value === '');
 
     if (emptyInput) {
         emptyInput.value = key.toLowerCase();
-        emptyInput.focus(); // Set focus on the input field
 
-        // Check if all input fields are filled
-        const allFilled = inputFields.every(input => input.value !== '');
-        if (allFilled) {
-            checkWord(); // Automatically trigger the check
+        // Find the index of the current empty input field
+        const currentIndex = inputFields.indexOf(emptyInput);
+
+        // Set focus on the next input field (if available)
+        if (currentIndex < inputFields.length - 1) {
+            inputFields[currentIndex + 1].focus();
+        } else {
+            // Do not trigger the check automatically
         }
     }
 }
