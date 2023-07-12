@@ -1,6 +1,5 @@
 first
 people
-little
 still
 world
 great
@@ -32,18 +31,15 @@ looked
 order
 business
 thing
-young
 later
 social
 large
 second
-early
 power
 interest
 turned
 light
 began
-general
 family
 sense
 development
@@ -70,13 +66,11 @@ result
 field
 heard
 study
-reason
 position
 change
 special
 individual
 close
-major
 wanted
 voice
 clear
@@ -185,7 +179,6 @@ table
 training
 stand
 issue
-north
 earlier
 market
 ready
@@ -212,8 +205,6 @@ influence
 opened
 trouble
 physical
-george
-chance
 stopped
 piece
 cause
@@ -272,7 +263,6 @@ plane
 quality
 writing
 square
-brown
 pattern
 horse
 organization
@@ -283,7 +273,6 @@ progress
 design
 distance
 established
-spring
 expect
 heavy
 principle
@@ -299,7 +288,6 @@ continue
 season
 write
 reach
-press
 covered
 union
 waiting
@@ -316,10 +304,10 @@ played
 limited
 prepared
 original
+reason
 factor
 scene
 teeth
-james
 raised
 demand
 professional
@@ -327,7 +315,6 @@ dropped
 playing
 built
 meant
-price
 filled
 talking
 related
@@ -340,7 +327,6 @@ caught
 claim
 supply
 style
-charles
 energy
 standing
 glass
@@ -349,7 +335,6 @@ share
 product
 accepted
 opinion
-green
 primary
 relation
 older
@@ -374,10 +359,8 @@ construction
 noted
 regard
 principal
-carry
 equal
 develop
-doctor
 measure
 spoke
 association
@@ -475,12 +458,10 @@ pulled
 youth
 contrast
 official
-jones
 positive
 planned
 assumed
 store
-morgan
 familiar
 accept
 chosen
@@ -554,9 +535,9 @@ powerful
 assignment
 highest
 recognize
-wilson
 turning
 assume
+price
 starting
 speech
 showing
@@ -593,7 +574,6 @@ understood
 command
 occasion
 appeal
-roman
 liked
 exercise
 circle
@@ -603,7 +583,6 @@ aside
 taste
 contact
 appearance
-lewis
 continuing
 alive
 combination
@@ -632,7 +611,6 @@ travel
 wished
 supported
 worry
-smith
 divided
 wheel
 double
@@ -686,7 +664,6 @@ walking
 uniform
 easier
 conventional
-minor
 trust
 silent
 consideration
@@ -711,16 +688,12 @@ screen
 shooting
 concentration
 burning
-unknown
 plain
 version
 silence
 drinking
-stone
 liquid
 creation
-frank
-junior
 review
 engaged
 identified
@@ -729,7 +702,6 @@ blind
 interior
 mantle
 humor
-wright
 minister
 strike
 resistance
@@ -742,7 +714,6 @@ adopted
 sheet
 impression
 referred
-edward
 safety
 honest
 native
@@ -757,7 +728,6 @@ medium
 preparation
 curve
 burden
-captain
 admitted
 cross
 pound
@@ -800,7 +770,6 @@ switch
 snake
 bound
 pilot
-brain
 reflected
 varied
 touched
@@ -846,10 +815,8 @@ parallel
 shear
 marine
 gross
-judge
 considering
 combined
-lawrence
 dependent
 assured
 transportation
@@ -902,7 +869,6 @@ device
 tested
 organic
 attended
-jackson
 affected
 guide
 severe
@@ -920,7 +886,6 @@ variable
 coating
 staining
 sounded
-grant
 visiting
 challenge
 sympathetic
@@ -981,7 +946,6 @@ phrase
 fallen
 dying
 connected
-williams
 shouting
 receiving
 concluded
@@ -994,7 +958,6 @@ magazine
 crazy
 burst
 variation
-grace
 gathered
 remote
 testing
@@ -1077,7 +1040,6 @@ pressed
 voting
 representing
 debate
-harris
 extending
 bench
 specified
@@ -1090,7 +1052,6 @@ introduction
 graduate
 sacrifice
 arise
-silver
 wound
 witness
 locked
@@ -1104,8 +1065,8 @@ dimension
 lighted
 committed
 operated
-davis
 acquire
+doctor
 scattered
 profound
 gathering
@@ -1114,7 +1075,6 @@ maintaining
 distributed
 reserved
 grain
-shade
 refer
 delicate
 applying
@@ -1132,13 +1092,10 @@ establishing
 released
 shopping
 handled
-mitchell
 desperate
 pointing
-royal
 reserve
 recalled
-storm
 submarine
 approaching
 invited
@@ -1163,7 +1120,6 @@ inspired
 volunteer
 stretch
 entry
-golden
 breaking
 exhibit
 attacked
@@ -1189,6 +1145,7 @@ premier
 promising
 drill
 moore
+chance
 firing
 seized
 expressing
@@ -1219,7 +1176,6 @@ giant
 barrel
 protest
 reflects
-trace
 exposure
 belly
 excited
@@ -1228,9 +1184,9 @@ saddle
 heating
 registered
 traveled
-miller
 anticipated
 expects
+carry
 attending
 suited
 earliest
@@ -1274,7 +1230,6 @@ accepting
 stiff
 skirt
 seated
-queen
 governing
 profit
 defend
@@ -1287,7 +1242,6 @@ substitute
 backward
 craft
 shame
-marshal
 envelope
 possession
 shining
@@ -1297,6 +1251,7 @@ smart
 complement
 receives
 repair
+grant
 confirmed
 conditioned
 expanded
@@ -1371,6 +1326,7 @@ twisted
 underground
 deliver
 proceeding
+judge
 southeast
 faster
 arose
@@ -1432,14 +1388,12 @@ flowing
 counted
 pushing
 delivery
-crystal
 stretching
 brand
 shocked
 flood
 quote
 belonged
-hamilton
 capture
 resolved
 expecting
@@ -1447,6 +1401,7 @@ progressive
 staying
 shorter
 collar
+brain
 awful
 prevailing
 neglected
@@ -1468,7 +1423,6 @@ quest
 clearing
 legitimate
 bounced
-walker
 pitching
 spotted
 hitting
@@ -1485,7 +1439,6 @@ translated
 fancy
 fringe
 shake
-orange
 reflecting
 matched
 finest
@@ -1633,6 +1586,7 @@ blank
 chill
 rupee
 relieve
+spring
 expand
 restrained
 gaining
@@ -1651,7 +1605,6 @@ collapsed
 stopping
 lowest
 steep
-pepper
 utter
 lasting
 conducting
@@ -1702,7 +1655,6 @@ nucleus
 incorporated
 whipped
 harsh
-fleet
 contended
 resolve
 believing
@@ -1713,7 +1665,6 @@ lighter
 southwest
 kicking
 newest
-russell
 layer
 purse
 acknowledged
@@ -1734,17 +1685,15 @@ yielded
 compounded
 absorption
 swallowed
-ridge
 traced
-lyric
 thunder
 cooler
 eaten
 pleading
 hardened
-gauge
 antique
 pretending
+stone
 discount
 molded
 crest
@@ -1767,7 +1716,6 @@ posted
 timing
 nailed
 shaken
-porter
 slice
 array
 loading
@@ -1778,6 +1726,7 @@ lodge
 planted
 deduction
 breast
+shade
 wired
 appreciated
 marking
@@ -1858,7 +1807,6 @@ lease
 margin
 poised
 guiding
-chase
 disturbance
 northeast
 judging
@@ -1917,7 +1865,6 @@ surveyed
 tougher
 addressing
 stepping
-homer
 yielding
 catching
 timed
@@ -2022,7 +1969,6 @@ slump
 pitched
 inviting
 accommodation
-diamond
 charging
 cleaner
 prompt
@@ -2041,6 +1987,7 @@ bluff
 dispatch
 backing
 restoration
+press
 stimulating
 unstable
 jammed
@@ -2059,6 +2006,7 @@ cardinal
 removing
 rousing
 dashed
+trace
 sticking
 slack
 thrusting
@@ -2071,7 +2019,6 @@ distilled
 coupling
 interlocking
 skipped
-chuck
 surroundings
 planking
 scrap
@@ -2083,12 +2030,12 @@ scrub
 reversed
 sucking
 scraped
-victoria
 crawling
 betrayed
 haunted
 surveying
 mouse
+crystal
 jumping
 stool
 violate
@@ -2156,7 +2103,6 @@ maneuver
 communicating
 topped
 stamped
-blaze
 whipping
 numbering
 scratched
@@ -2183,6 +2129,7 @@ sloping
 lifting
 shortened
 cured
+diamond
 drained
 bending
 strand
@@ -2206,6 +2153,7 @@ streaming
 hunted
 aggregate
 bidding
+queen
 hammer
 glare
 slick
@@ -2227,9 +2175,8 @@ hooked
 flowed
 spelled
 doings
+storm
 wrapping
-pierce
-turner
 sinking
 plague
 figuring
@@ -2382,7 +2329,6 @@ flourish
 shrink
 richest
 richer
-fuller
 undertaking
 affinity
 screening
@@ -2501,13 +2447,13 @@ banked
 suppressed
 hottest
 cable
+green
 baking
 ordained
 sparkle
 chestnut
 tipped
 wedge
-gregory
 grabbing
 withdrawing
 prepares
@@ -2523,6 +2469,7 @@ snatch
 undone
 softness
 gallant
+grace
 sends
 variant
 flown
@@ -2571,7 +2518,6 @@ scanning
 sanctioned
 adhere
 skimming
-olive
 fluttering
 mosaic
 distributing
@@ -2579,7 +2525,6 @@ narrowing
 jumble
 warmer
 pounded
-cannon
 puffed
 rejecting
 casting
@@ -2591,6 +2536,7 @@ strung
 diffuse
 torment
 sounder
+ridge
 inducing
 introduces
 vanishing
@@ -2637,10 +2583,12 @@ contracting
 pledge
 swearing
 fouling
-fielding
+homer
 taper
 roller
 hurting
+edward
+major
 flushing
 saluted
 bunker
@@ -2689,7 +2637,6 @@ caller
 roughness
 poorest
 waver
-lance
 slicker
 posing
 purge
@@ -2839,7 +2786,6 @@ rigging
 fracture
 starter
 draught
-gaines
 fouled
 blasting
 flicker
@@ -2849,6 +2795,7 @@ converting
 regret
 mushroom
 uprising
+chase
 scalloped
 confirming
 purged
@@ -2934,7 +2881,6 @@ harmonic
 lightest
 darkest
 finer
-sable
 feeder
 branded
 distributes
@@ -2968,6 +2914,7 @@ differentiate
 paring
 sublimate
 doting
+george
 thundering
 hacked
 throwed
@@ -3081,15 +3028,16 @@ monitor
 animation
 ringed
 digesting
+lance
 bruising
 sweetest
 beaver
+jackson
 fiddle
 ragging
 scorched
 dodging
 flipping
-ginger
 sweeter
 lapping
 smear
@@ -3102,11 +3050,14 @@ bonding
 fumble
 routed
 burnes
+porter
 translates
 inflamed
 accommodated
+walker
 halting
 torpedo
+silver
 fractured
 mellow
 topper
@@ -3206,6 +3157,7 @@ fiddling
 falsifying
 meanest
 erupting
+captain
 blackest
 runing
 takeing
@@ -3249,7 +3201,6 @@ wrestling
 recovers
 professes
 agitated
-gustavus
 compensates
 deepening
 reposed
@@ -3303,6 +3254,7 @@ transfered
 arranges
 regenerates
 inspires
+jones
 radiates
 shortness
 emptying
@@ -3341,6 +3293,7 @@ loosest
 floater
 coarseness
 header
+fleet
 purifying
 quenching
 crease
@@ -3378,6 +3331,7 @@ racking
 whiff
 nosing
 prying
+north
 leaded
 drape
 stumble
