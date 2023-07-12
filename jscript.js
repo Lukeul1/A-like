@@ -34,8 +34,9 @@ inputFields.forEach((input, index) => {
 function checkWord() {
     const userWord = inputFields
         .map(input => {
+            const inputValue = input.value.toLowerCase();
             input.value = ''; // Clear the input field
-            return input.value.toLowerCase();
+            return inputValue;
         })
         .join('');
 
@@ -47,7 +48,12 @@ function checkWord() {
         resultMessage.textContent = 'Try again!';
         resultMessage.style.color = 'red';
         lives--;
-    inputFields[0].focus();
+        inputFields.forEach((input, index) => {
+            input.value = ''; // Clear the input fields
+            if (index === 0) {
+                input.focus(); // Set focus to the initial input field
+            }
+        });
         if (lives <= 0) {
             resultMessage.textContent = `You lost! The word was "${targetWord}".`;
             checkButton.disabled = true;
@@ -56,7 +62,21 @@ function checkWord() {
             remainingLives.textContent = lives;
         }
     }
+
+    // Remove focus from the input fields
+    inputFields.forEach(input => input.blur());
 }
+
+// Add event listener to each input field for external keyboard input
+inputFields.forEach((input, index) => {
+    input.addEventListener('input', () => {
+        if (index < inputFields.length - 1) {
+            inputFields[index + 1].focus();
+        } else {
+            checkButton.focus(); // Move focus to the Check button after the final input field
+        }
+    });
+});
 
 // Define the on-screen keyboard keys
 const keyboardKeys = [
