@@ -14,6 +14,7 @@ for (let i = 0; i < targetWord.length; i++) {
     const input = document.createElement('input');
     input.type = 'text';
     input.maxLength = 1;
+    input.pattern = '[a-zA-Z]'; // Restrict input to English alphabet letters only
     wordInputsContainer.appendChild(input);
 }
 
@@ -24,8 +25,29 @@ checkButton.addEventListener('click', checkWord);
 const inputFields = Array.from(wordInputsContainer.children);
 inputFields.forEach((input, index) => {
     input.addEventListener('input', () => {
-        if (index < inputFields.length - 1) {
+        if (input.value === '') {
+            // If the input is empty, remain in the same input field
+            input.blur();
+        } else if (index < inputFields.length - 1) {
             inputFields[index + 1].focus();
+        } else {
+            checkButton.focus(); // Move focus to the Check button after the final input field
+        }
+    });
+
+    input.addEventListener('keydown', event => {
+        if (event.key === 'Backspace') {
+            // Prevent default behavior of backspace key
+            event.preventDefault();
+
+            // Find the index of the current input field
+            const currentIndex = inputFields.indexOf(input);
+
+            // Clear the input field
+            input.value = '';
+
+            // Set focus back to the current input field
+            input.focus();
         }
     });
 });
@@ -66,17 +88,6 @@ function checkWord() {
     // Remove focus from the input fields
     inputFields.forEach(input => input.blur());
 }
-
-// Add event listener to each input field for external keyboard input
-inputFields.forEach((input, index) => {
-    input.addEventListener('input', () => {
-        if (index < inputFields.length - 1) {
-            inputFields[index + 1].focus();
-        } else {
-            checkButton.focus(); // Move focus to the Check button after the final input field
-        }
-    });
-});
 
 // Define the on-screen keyboard keys
 const keyboardKeys = [
@@ -119,3 +130,4 @@ function handleKeyboardInput(key) {
         }
     }
 }
+

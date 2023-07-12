@@ -14,9 +14,11 @@ h1 {
 }
 
 #word-inputs input {
-    width: 30px;
+    width: 40px; /* Increase the width of input fields */
+    height: 40px; /* Increase the height of input fields */
     text-align: center;
     margin: 5px;
+    font-size: 20px; /* Increase the font size of characters in input fields */
 }
 
 #result-container {
@@ -43,8 +45,8 @@ h1 {
 
 .keyboard-key {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 40px; /* Increase the width of keyboard buttons */
+    height: 40px; /* Increase the height of keyboard buttons */
     margin-right: 5px;
     font-size: 18px;
 }
