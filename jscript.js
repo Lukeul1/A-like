@@ -20,9 +20,19 @@ for (let i = 0; i < targetWord.length; i++) {
 // Add event listener to the Check button
 checkButton.addEventListener('click', checkWord);
 
+// Add event listener to each input field
+const inputFields = Array.from(wordInputsContainer.children);
+inputFields.forEach((input, index) => {
+    input.addEventListener('input', () => {
+        if (index < inputFields.length - 1) {
+            inputFields[index + 1].focus();
+        }
+    });
+});
+
 // Function to handle the word checking logic
 function checkWord() {
-    const userWord = Array.from(wordInputsContainer.children)
+    const userWord = inputFields
         .map(input => input.value.toLowerCase())
         .join('');
 
@@ -35,9 +45,10 @@ function checkWord() {
         resultMessage.style.color = 'red';
         lives--;
 
-        if (lives === 0) {
+        if (lives <= 0) {
             resultMessage.textContent = `You lost! The word was "${targetWord}".`;
             checkButton.disabled = true;
+            remainingLives.textContent = '0';
         } else {
             remainingLives.textContent = lives;
         }
