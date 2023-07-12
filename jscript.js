@@ -4,8 +4,9 @@ const checkButton = document.getElementById('check-button');
 const resultMessage = document.getElementById('result-message');
 const remainingLives = document.getElementById('remaining-lives');
 
-// Define the target word and initial lives
-const targetWord = 'apple';
+// Randomly select a target word from the word list
+const wordList = ['tree', 'pineapple', 'bird', 'pizza']; // Replace with your word list
+const targetWord = wordList[Math.floor(Math.random() * wordList.length)];
 let lives = 3;
 
 // Create the word input cells dynamically based on the length of the target word
