@@ -25,7 +25,11 @@ checkButton.addEventListener('click', checkWord);
 const inputFields = Array.from(wordInputsContainer.children);
 inputFields.forEach((input, index) => {
     input.addEventListener('input', () => {
-        if (input.value === '') {
+        const inputValue = input.value.toLowerCase();
+        if (!/^[a-zA-Z]$/.test(inputValue)) {
+            // If the input is not a letter, clear the input field
+            input.value = '';
+        } else if (inputValue === '') {
             // If the input is empty, remain in the same input field
             input.blur();
         } else if (index < inputFields.length - 1) {
@@ -130,4 +134,5 @@ function handleKeyboardInput(key) {
         }
     }
 }
+
 
