@@ -1,4 +1,4 @@
-# A-like
+# a-like
 Word game
 
 To do:
