@@ -26,11 +26,9 @@ for word in word_list:
 
 # Print the word list with their synonyms
 for word, synonyms in word_synonyms.items():
-    print(f'{word}: {synonyms}')
+    print(f'{word}: {", ".join(synonyms)};')
 
 # Output synonyms to a text file
 with open('synonyms.txt', 'w') as file:
     for word, synonyms in word_synonyms.items():
-        file.write(f'{word}: {", ".join(synonyms)}\n')
-
-
+        file.write(f'{word}: {", ".join(synonyms)};\n')
