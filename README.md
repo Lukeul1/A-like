@@ -1,4 +1,4 @@
-# A-like
+# sam-e
 Word game
 
 To do:
