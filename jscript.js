@@ -3,20 +3,37 @@ const wordInputsContainer = document.getElementById('word-inputs');
 const checkButton = document.getElementById('check-button');
 const resultMessage = document.getElementById('result-message');
 const remainingLives = document.getElementById('remaining-lives');
+const synonymElement = document.createElement('p');
+synonymElement.id = 'synonym';
+document.getElementById('result-container').insertBefore(synonymElement, document.getElementById('how-to-play'));
 
-// Fetch the word list from the "common_words.txt" file
-fetch('common_words.txt')
+// Fetch the synonyms file
+fetch('synonyms.txt')
   .then(response => response.text())
   .then(data => {
-    // Parse the word list
-    const wordList = data.trim().split(',');
+    // Parse the synonyms data
+    const synonymsMap = new Map();
+    data.trim().split('\n').forEach(line => {
+      const [wordWithSemicolon, synonymsString] = line.split(':');
+      const word = wordWithSemicolon.trim(); // Remove the semicolon from the word
+      const synonyms = synonymsString.split(',').map(synonym => synonym.trim());
+      synonymsMap.set(word, synonyms);
+    });
 
-    // Randomly select a target word from the word list
-    const targetWord = wordList[Math.floor(Math.random() * wordList.length)].replace(/"/g, '');
+    // Randomly select a target word from the synonyms map
+    const words = Array.from(synonymsMap.keys());
+    const targetWord = words[Math.floor(Math.random() * words.length)];
+    const synonyms = synonymsMap.get(targetWord);
+
+    // Randomly select one synonym from the list
+    const selectedSynonym = synonyms[Math.floor(Math.random() * synonyms.length)];
+    synonymElement.textContent = `Synonym: ${selectedSynonym}`;
+
     let lives = 3;
 
-    // Create the word input cells dynamically based on the length of the target word
-    for (let i = 0; i < targetWord.length; i++) {
+    // Adjust the length of the input fields based on the length of the target word
+    const maxLength = targetWord.length;
+    for (let i = 0; i < maxLength; i++) {
       const input = document.createElement('input');
       input.type = 'text';
       input.maxLength = 1;
@@ -143,5 +160,5 @@ fetch('common_words.txt')
     }
   })
   .catch(error => {
-    console.error('Error fetching the word list:', error);
+    console.error('Error fetching the synonyms:', error);
   });
