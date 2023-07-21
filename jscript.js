@@ -16,7 +16,12 @@ fetch('synonyms.txt')
     data.trim().split('\n').forEach(line => {
       const [wordWithSemicolon, synonymsString] = line.split(':');
       const word = wordWithSemicolon.trim(); // Remove the semicolon from the word
-      const synonyms = synonymsString.split(',').map(synonym => synonym.trim());
+      let synonyms = synonymsString.split(',').map(synonym => synonym.trim());
+      // Check if the last synonym ends with ";", and remove the character if it does
+      const lastSynonymIndex = synonyms.length - 1;
+      if (synonyms[lastSynonymIndex].endsWith(';')) {
+        synonyms[lastSynonymIndex] = synonyms[lastSynonymIndex].slice(0, -1);
+      }
       synonymsMap.set(word, synonyms);
     });
 
@@ -112,53 +117,77 @@ fetch('synonyms.txt')
       inputFields.forEach(input => input.blur());
     }
 
-    // Define the on-screen keyboard keys
-    const keyboardKeys = [
-      ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-      ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-      ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
-    ];
+// Define the on-screen keyboard keys
+const keyboardKeys = [
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+  { type: 'special', keys: ['Enter', 'Backspace'] }, // Use an object to represent the "Enter" and "Backspace" buttons
+];
 
-    // Create the on-screen keyboard dynamically
-    const keyboardContainer = document.getElementById('keyboard-container');
-    keyboardKeys.forEach(row => {
-      const keyboardRow = document.createElement('div');
-      keyboardRow.className = 'keyboard-row';
-      row.forEach(key => {
-        const keyButton = document.createElement('button');
-        keyButton.className = 'keyboard-key';
-        keyButton.textContent = key;
-        keyButton.addEventListener('click', () => handleKeyboardInput(key));
-        keyboardRow.appendChild(keyButton);
-      });
-      keyboardContainer.appendChild(keyboardRow);
+// Create the on-screen keyboard dynamically
+const keyboardContainer = document.getElementById('keyboard-container');
+keyboardKeys.forEach(row => {
+  const keyboardRow = document.createElement('div');
+  keyboardRow.className = 'keyboard-row';
+  if (Array.isArray(row)) {
+    row.forEach(key => {
+      const keyButton = document.createElement('button');
+      keyButton.className = 'keyboard-key';
+      keyButton.textContent = key;
+      keyButton.addEventListener('click', () => handleKeyboardInput(key));
+      keyboardRow.appendChild(keyButton);
     });
+  } else if (row.type === 'special') {
+    // For the special buttons, use a different class
+    row.keys.forEach(key => {
+      const keyButton = document.createElement('button');
+      keyButton.className = 'keyboard-key-special'; // Use a different class for the "Enter" and "Backspace" buttons
+      keyButton.textContent = key;
+      keyButton.addEventListener('click', () => handleKeyboardInput(key));
+      keyboardRow.appendChild(keyButton);
+    });
+  }
+  keyboardContainer.appendChild(keyboardRow);
+});
 
-    // Function to handle on-screen keyboard input
-    function handleKeyboardInput(key) {
-      // Find the first empty input field
-      const emptyInput = inputFields.find(input => input.value === '');
+function handleKeyboardInput(key) {
+  // Find the first empty input field
+  const emptyInput = inputFields.find(input => input.value === '');
 
-      if (emptyInput) {
-        const inputValue = key.toLowerCase();
+  if (emptyInput) {
+    if (key === 'Enter') {
+      // Trigger the check when the Enter button is clicked
+      checkWord();
+    } else if (key === 'Backspace') {
+      // If Backspace is clicked, remove the character from the last non-empty input field
+      const lastNonEmptyInput = inputFields.reduceRight((found, input) => found || (input.value !== '' && input), null);
+      if (lastNonEmptyInput) {
+        lastNonEmptyInput.value = '';
+      }
+    } else {
+      const inputValue = key.toLowerCase();
 
-        if (/^[a-zA-Z]$/.test(inputValue)) {
-          // If the input is a letter, populate the empty input field
-          emptyInput.value = inputValue;
+      if (/^[a-zA-Z]$/.test(inputValue)) {
+        // If the input is a letter, populate the empty input field
+        emptyInput.value = inputValue;
 
-          // Find the index of the current empty input field
-          const currentIndex = inputFields.indexOf(emptyInput);
+        // Find the index of the current empty input field
+        const currentIndex = inputFields.indexOf(emptyInput);
 
-          // Set focus on the next input field (if available)
-          if (currentIndex < inputFields.length - 1) {
-            inputFields[currentIndex + 1].focus();
-          } else {
-            // Do not trigger the check automatically
-          }
+        // Set focus on the next input field (if available)
+        if (currentIndex < inputFields.length - 1) {
+          inputFields[currentIndex + 1].focus();
+        } else {
+          // Do not trigger the check automatically
         }
       }
     }
-  })
-  .catch(error => {
-    console.error('Error fetching the synonyms:', error);
-  });
+  }
+}
+
+// End of the then block
+})
+.catch(error => {
+  console.error('Error fetching the synonyms:', error);
+});
