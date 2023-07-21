@@ -80,42 +80,40 @@ fetch('synonyms.txt')
       });
     });
 
-    // Function to handle the word checking logic
-    function checkWord() {
-      const userWord = inputFields
-        .map(input => {
-          const inputValue = input.value.toLowerCase();
-          input.value = ''; // Clear the input field
-          return inputValue;
-        })
-        .join('');
+// Function to handle the word checking logic
+function checkWord() {
+  const userWord = inputFields
+    .map(input => {
+      const inputValue = input.value.toLowerCase();
+      input.value = ''; // Clear the input field
+      return inputValue;
+    })
+    .join('');
 
-      if (userWord === targetWord) {
-        resultMessage.textContent = 'Correct!';
-        resultMessage.style.color = 'green';
-        checkButton.disabled = true;
-      } else {
-        resultMessage.textContent = 'Try again!';
-        resultMessage.style.color = 'red';
-        lives--;
-        inputFields.forEach((input, index) => {
-          input.value = ''; // Clear the input fields
-          if (index === 0) {
-            input.focus(); // Set focus to the initial input field
-          }
-        });
-        if (lives <= 0) {
-          resultMessage.textContent = `You lost! The word was "${targetWord}".`;
-          checkButton.disabled = true;
-          remainingLives.textContent = '0';
-        } else {
-          remainingLives.textContent = lives;
-        }
+  if (userWord === targetWord) {
+    resultMessage.textContent = 'Correct!';
+    resultMessage.style.color = 'green';
+    checkButton.disabled = true;
+  } else {
+    resultMessage.textContent = 'Try again!';
+    resultMessage.style.color = 'red';
+    lives--;
+    remainingLives.textContent = lives;
+    inputFields.forEach((input, index) => {
+      input.value = ''; // Clear the input fields
+      if (index === 0) {
+        input.focus(); // Set focus to the initial input field
       }
-
-      // Remove focus from the input fields
-      inputFields.forEach(input => input.blur());
+    });
+    if (lives <= 0) {
+      resultMessage.textContent = `You lost! The word was "${targetWord}".`;
+      checkButton.disabled = true;
     }
+  }
+
+  // Remove focus from the input fields
+  inputFields.forEach(input => input.blur());
+}
 
 // Define the on-screen keyboard keys
 const keyboardKeys = [
@@ -151,9 +149,11 @@ keyboardKeys.forEach(row => {
   keyboardContainer.appendChild(keyboardRow);
 });
 
+// Function to handle on-screen keyboard input
 function handleKeyboardInput(key) {
   // Find the first empty input field
   const emptyInput = inputFields.find(input => input.value === '');
+  const lastNonEmptyInput = inputFields.reduceRight((found, input) => found || (input.value !== '' && input), null);
 
   if (emptyInput) {
     if (key === 'Enter') {
@@ -161,7 +161,6 @@ function handleKeyboardInput(key) {
       checkWord();
     } else if (key === 'Backspace') {
       // If Backspace is clicked, remove the character from the last non-empty input field
-      const lastNonEmptyInput = inputFields.reduceRight((found, input) => found || (input.value !== '' && input), null);
       if (lastNonEmptyInput) {
         lastNonEmptyInput.value = '';
       }
