@@ -14,7 +14,7 @@ nltk.download('brown')
 from nltk.corpus import brown
 
 # Read the names from the dataset
-names_file = '/home/lukeul/sam-e/names.csv'  # Replace with the path to the names dataset
+names_file = '/home/lukeul/a-like/names.csv'  # Replace with the path to the names dataset
 names = set()
 with open(names_file, 'r') as file:
     reader = csv.reader(file)
@@ -41,14 +41,14 @@ for word in common_words:
         singular_word = WordNetLemmatizer().lemmatize(word)
         if singular_word not in filtered_words:
             filtered_words.append(singular_word)
-            if len(filtered_words) == 5000:
+            if len(filtered_words) == 2000:
                 break
 
 # Remove words with fewer than 5 characters
 filtered_words = [word for word in filtered_words if len(word) >= 5]
 
 # Write the words to a text file
-output_file = '/home/lukeul/sam-e/common_words.txt'  # Replace with the desired file path
+output_file = '/home/lukeul/a-like/common_words.txt'  # Replace with the desired file path
 # Write the words to a text file with a comma in front of each word
 with open(output_file, 'w') as file:
     file.write(','.join(f'"{word}"' for word in filtered_words))
