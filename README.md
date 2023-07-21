@@ -3,13 +3,10 @@ Word game
 
 To do:
 
-Will manually skim through the list and see if there is a way to
-further refine the list. 
+Word list needs refining further.
 
-Occasionally, if the last word in the array has a semi-colon it 
-is shown - this needs to be removed. 
-
-Remove unpleasant words.
+Possibly find a list of the most common words and their synonyms
+online to use instead?
 
 Include ability to share score to Social Media.
 
